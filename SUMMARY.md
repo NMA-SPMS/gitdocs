@@ -7,6 +7,7 @@
     * [O que é a MySNS Carteira](README.md#ces)
     * [Como ativar](README.md#ativar)
     * [Como adicionar cartões](README.md#addcartoes)
+* [FAQ - Suporte](faq.md)
 
 * [Instalação e Setup](install&setup.md)
 
@@ -24,7 +25,7 @@
 * [NativeScript and Angular](nativescript.md)
 * [Style Guide](styleguide.md)
     * [TypeScript](styleguide.md#typescript)
-    * [Git](styleguide.md)
+    * [Git](styleguide.md#git)
 
 --
 

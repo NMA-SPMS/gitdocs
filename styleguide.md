@@ -19,21 +19,21 @@
 [Documentação Oficial](https://www.typescriptlang.org/docs/tutorial.html)
 
 
-####1. Comandos basicos {#T1}
+###1. Comandos basicos {#T1}
 
 1. Instalar
-```
+```shell
 npm install -g typescript
 ```
 
 2. Verificar a versão
-```
+```shell
 tsc -v
 Version 1.8.10
 ```
 
 3. Compilar em javascript
-```
+```shell
 tsc main.ts
 ```
 Irá gerar o ficheiro `main.js`
@@ -41,17 +41,17 @@ Irá gerar o ficheiro `main.js`
 4. Outros comandos
 
 Compila vários ficheiros em simultâneo, gerando main.js e worker.js.
-```
+```shell
 tsc main.ts worker.ts    
 ```
 
 Compila todos os ficheiros .ts na pasta atual. Não funciona recursivamente
-```
+```shell
 tsc *.ts
 ```
 
 `--watch` compila automaticamente o ficheiro TypeScript sempre que forem feitas alterações
-```
+```shell
 # Initializes a watcher process that will keep main.js up to date.
 tsc main.ts --watch
 ```
@@ -233,3 +233,98 @@ function fn(x: number|string) {
     return moment().utcOffset(x);
 ```
 
+##Git {#git}
+Como as ferramentas utilizadas estão em inglês, esta secção estará maioritariamente em inglês
+1. [Submeter um issue / bug](#G1)
+2. [Submeter um Pull Request (PR)](#G2)
+3. [Commit Message Guidelines](#G3)
+
+### 1. Submeter um issue / bug {#G1}
+Ao submeter um *issue* deverá indicar as seguintes informações:
+
+    * Descrição do erro
+    * Caso de uso - o que estava a fazer quando ocorreu o erro
+    * Versão da aplicação 
+    * Sistema Operativo
+    * Screenshots (se aplicável)
+    * Related Issues - se estiver relacionado com outros *issues* abertos
+    * Sugerir uma correcção - se souber corrigir o *bug* 
+
+### 2. Submeter um Pull Request (PR) {#G2}
+
+Antes de submeter um pull request, considere as seguintes *guidelines*:
+
+* Make your changes in a new git branch:
+
+     ```shell
+     git checkout -b my-fix-branch master
+     ```
+
+* Create your patch, **including appropriate test cases**.
+* Follow our Coding Rules.
+* Commit your changes using a descriptive commit message.
+     ```shell
+     git commit -a
+     ```
+  Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
+
+
+### 3. Commit Message Guidelines {#G3}
+
+Temos regras muito precisas sobre como nossas mensagens de commit git podem ser formatadas. 
+Isso leva a ** mensagens mais Legíveis ** que são fáceis de seguir ao olhar através da ** história do projeto **. Mas também,
+Nós usamos as mensagens git commit para * **gerar change logs**
+
+#### Commit Message Formato
+Cada commit message tem os seguintes elementos: **header**, **body** e **footer**.  
+Por sua vez, um **header** é composto por **type**, **scope** e **subject**:
+
+``` 
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+O **header** é obrigatório, mas a **scope** do header é opcional.
+
+Cada linhha da commit message não deve ter mais de **100 caracteres**. Assim a mensagem será mais facil de ler nas mais variadas git tools.
+
+#### Revert
+Se um commit reverte um commit anterior, deve começar com `revert: `, seguido do *header* do commit revertido.
+O *body* deverá ter a mensagem `This reverts commit <hash>.`. O *hash* é o SHA do commit que será revertido.
+
+#### Type
+Deve ser um dos seguintes:
+
+* **feat**: A new feature
+* **fix**: A bug fix
+* **docs**: Documentation only changes
+* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing
+  semi-colons, etc)
+* **refactor**: A code change that neither fixes a bug nor adds a feature
+* **perf**: A code change that improves performance
+* **test**: Adding missing tests or correcting existing tests
+* **build**: Changes that affect the build system, CI configuration or external dependencies(example scopes: webpack, tns, npm)
+* **chore**: Other changes that don't modify `src` or `test` files
+
+#### Scope
+O *scope* pode ser qualquer sitio especifico do commit change. (ex: `pin-page`, `card`, etc. )
+
+#### Subject
+O *subject* é uma descrição suscinta da alteração.
+
+* Uso do imperativo: "change" em vez de "changed" ou "changes"
+* Sem letra maiuscula no inicio
+* Sem pontos finais (.) no fim
+
+#### Body
+* Uso do imperativo (tal como em *subject*)
+* Deve incluir a motivação da mudança e as alterações em relação à versão anterior
+Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
+
+#### Footer
+Deverá conter informação sobre **Breaking Changes** e também a referência para o *issue* que o commit fecha.
+
+**Breaking Changes** devem começar com a expressão `BREAKING CHANGE:` com duas linhas de separação do *body*-
