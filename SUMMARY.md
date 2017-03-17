@@ -13,13 +13,12 @@
 
 ### Especificações Técnicas
 
-* [Estrutura](estrutura.md)
-    * [Segurança Fisica e Lógica](estrutura.md#seguranca)
-
+* [Arquitetura](arquitetura.md)
+* [Segurança Fisica e Lógica](seguranca.md) 
 * [Funcionamento](funcionamento.md)
     * [Recolha de Dados](funcionamento.md#dados)
     * [Interconexões de Dados](funcionamento.md#comunicacao)
-    
+* [Backend](backend.md)
 
 ### Desenvolvimento
 * [NativeScript and Angular](nativescript.md)

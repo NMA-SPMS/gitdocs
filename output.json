@@ -1,0 +1,270 @@
+[
+  {
+    "title": "RoadMap",
+    "heading": "h1",
+    "content": "\n",
+    "children": [
+      {
+        "title": "Geral",
+        "heading": "h2",
+        "content": "\n<ul>\n<li>[ ]  <strong>Integração CMD</strong></li>\n<li>[ ]  Integração Área do Cidadão</li>\n<li>[ ]  Cartão de Avaliação de Episódios</li>\n<li>[ ]  Cartão do Testamento Vital</li>\n<li>[ ]  Cartão de Vacinas</li>\n<li>[ ]  Cartão Contactar CSP</li>\n<li>[ ]  Cartão Pessoa com Doença Rara</li>\n<li>[ ]  Medições de Saúde</li>\n<li>[ ]  Cartão Contactar Médico de Família</li>\n<li>[ ]  Cartão Taxas Moderadoras</li>\n<li>[ ]  Cartão dos Benefícios</li>\n<li>[ ]  Cartão das Alergias</li>\n<li>[ ]  Cartão da Medicação Crónica</li>\n<li>[ ]  Cartão de Emergência</li>\n<li>[ ]  Cartão Saúde Oral - Cheque Dentista</li>\n<li>[ ]  Cartão RCU2</li>\n<li>[ ]  Cartão eGuia Tratamento (push)</li>\n<li>[ ]  Cartão Europeu de Seguro de Doença (com Segurança Social)</li>\n<li>[ ]  Cartão do Dador (com IPST)</li>\n<li>[ ]  Cartão CIT</li>\n<li>[ ]  Cartão de Consultas (marcação CSP)</li>\n<li>[ ]  Cartão SIGA Cirurgias (consulta de LIC)</li>\n<li>[ ]  Cartão SIGA Cirurgias Consultas (estados das referenciações)</li>\n<li>[ ]  Cartão SIGA Cirurgia (vale cirurgico)</li>\n<li>[ ]  Cartão Posologia (eBIC)</li>\n</ul>\n"
+      },
+      {
+        "title": "Macro Tasks",
+        "heading": "h2",
+        "content": "\n<h4>HAPI.js</h4>\n<ul>\n<li>[x] HAPI - Auth AMA CMD - Part1 - make request</li>\n<li>[x] +tests</li>\n<li>[ ] HAPI - Auth AMA CMD - Part2 - parse response</li>\n<li>[ ] +tests</li>\n<li>[ ] HAPI - Auth RSP - Part1 - Parse 1s request, send OTP + response</li>\n<li>[ ] +tests</li>\n<li>[ ] HAPI - Auth RSP - Part2 - Parse 2nd request + validate OTP</li>\n<li>[ ] +tests</li>\n<li>[ ] HAPI - auth-ces plugin (decrypt + verify client signature)</li>\n<li>[ ] +tests</li>\n<li>[ ] HAPI - response plugin (encrypt + sign server)</li>\n<li>[ ] +tests</li>\n<li>[ ] HAPI - request validation</li>\n<li>[ ] +tests</li>\n<li>[ ] HAPI - good consumer</li>\n<li>[ ] +tests</li>\n</ul>\n<h4>HAPI.js - Dockerfile (Swarm)</h4>\n<ul>\n<li>[ ] auth-cmd.ces.mysns.pt</li>\n<li>[ ] auth-rnu.ces.mysns.pt</li>\n<li>[ ] comm.ces.mysns.pt</li>\n<li>[ ] rnu.comm.ces.mysns.pt (internal - endpoint)</li>\n<li>[ ] rsp.comm.ces.mysns.pt (internal - endpoint)</li>\n</ul>\n<h4>Azure DocumentDB - database creation (MongoDB)</h4>\n<ul>\n<li>[ ] CmdAuthState</li>\n<li>[ ] PubKeys - Client PubKeys + Server PubKeys</li>\n<li>[ ] Comm configuration (dispatcher)</li>\n<li>[ ] LogDatabase (good + encrypted)</li>\n</ul>\n<h4>Azure Key Vault - ServerKeys HSM (10 anos+ BYOK)</h4>\n<ul>\n<li>[ ] Auth Key </li>\n<li>[ ] Comm Key</li>\n<li>[ ] Log Key</li>\n<li>[ ] Client Sign Key</li>\n<li>[ ] RNU-Comm <KEYGEN></KEYGEN></li>\n<li>[ ] RSP-Comm Key</li>\n</ul>\n"
+      }
+    ],
+    "path": "roadmap.md"
+  },
+  {
+    "title": "StyleGuide",
+    "heading": "h1",
+    "content": "\n",
+    "children": [
+      {
+        "title": "TypeScript ",
+        "heading": "h2",
+        "content": "\n<ol>\n<li><a href=\"styleguide.md#T1\">Comandos basicos</a></li>\n<li><a href=\"styleguide.md#T2\">Do &amp; Don&#39;ts</a><ul>\n<li><a href=\"styleguide.md#nomes\">1.Nomes</a></li>\n<li><a href=\"styleguide.md#tipos\">2.Tipos - <code>number</code>, <code>string</code>,<code>boolean</code>, <code>any</code> VS <code>Number</code>, <code>String</code>, <code>Boolean</code> e <code>Object</code></a></li>\n<li><a href=\"styleguide#nullvsundefined\">3.<code>null</code> vs. <code>undefined</code></a></li>\n<li><a href=\"styleguide.md#files\">4.Ficheiros auto-gerados <code>&quot;.generated.*</code></a></li>\n<li><a href=\"styleguide.md#imutabilidade\">5.Imutabilidade</a></li>\n<li><a href=\"styleguide.md#callbacktypes\">6.Callback Types</a></li>\n<li><a href=\"styleguide.md#callbacktypes2\">7. Parâmetros Opcionais em Callbacks</a></li>\n<li><a href=\"styleguide.md#overloads\">8. Overloads e Callbacks</a></li>\n<li><a href=\"styleguide.md#ordem\">9. Ordenação</a></li>\n<li><a href=\"styleguide.md#arrasto\">10. Evitar arrasto de pârametros através de opcionais</a></li>\n<li><a href=\"styleguide.md#union\">11. Union Types (ex: <code>number|string</code>)</a></li>\n</ul>\n</li>\n</ol>\n<p><a href=\"https://www.typescriptlang.org/docs/tutorial.html\">Documentação Oficial</a></p>\n",
+        "children": [
+          {
+            "title": "1. Comandos basicos ",
+            "heading": "h3",
+            "content": "\n<ol>\n<li><p>Instalar</p>\n<pre><code class=\"lang-shell\">npm install -g typescript\n</code></pre>\n</li>\n<li><p>Verificar a versão</p>\n<pre><code class=\"lang-shell\">tsc -v\nVersion 1.8.10\n</code></pre>\n</li>\n<li><p>Compilar em javascript</p>\n<pre><code class=\"lang-shell\">tsc main.ts\n</code></pre>\n<p>Irá gerar o ficheiro <code>main.js</code></p>\n</li>\n<li><p>Outros comandos</p>\n</li>\n</ol>\n<p>Compila vários ficheiros em simultâneo, gerando main.js e worker.js.</p>\n<pre><code class=\"lang-shell\">tsc main.ts worker.ts\n</code></pre>\n<p>Compila todos os ficheiros .ts na pasta atual. Não funciona recursivamente</p>\n<pre><code class=\"lang-shell\">tsc *.ts\n</code></pre>\n<p><code>--watch</code> compila automaticamente o ficheiro TypeScript sempre que forem feitas alterações</p>\n<pre><code class=\"lang-shell\"># Initializes a watcher process that will keep main.js up to date.\ntsc main.ts --watch\n</code></pre>\n"
+          },
+          {
+            "title": "Do &amp; Don&#39;ts  ",
+            "heading": "h3",
+            "content": "\n",
+            "children": [
+              {
+                "title": "1. Nomes ",
+                "heading": "h4",
+                "content": "\n<ol>\n<li><p>Usar PascalCase para type names.</p>\n</li>\n<li><p>Não usar &quot;I&quot; como prefixo pra interface names.</p>\n</li>\n<li><p>Usar PascalCase para enum values.</p>\n</li>\n<li><p>Usar camelCase para nomes de funções.</p>\n</li>\n<li><p>Usar camelCase para nomes de propriedades e variáveis locais.</p>\n</li>\n<li><p>Não utilizar &quot;_&quot; como prefixo para propriedades privadas.</p>\n</li>\n<li><p>Utilizar palavras completas em nomes, sempre que possivel.</p>\n</li>\n</ol>\n"
+              },
+              {
+                "title": "2. Tipos: <code>number</code>, <code>string</code>,<code>boolean</code>, <code>any</code> VS <code>Number</code>, <code>String</code>, <code>Boolean</code> e <code>Object</code> ",
+                "heading": "h4",
+                "content": "\n<p>Nunca use os tipos <code>Number</code>, <code>String</code>, <code>Boolean</code> ou <code>Object</code>. Esses tipos referem-se a objetos não-primitivos que quase nunca são usados adequadamente em código JavaScript.</p>\n<pre><code class=\"lang-typescript\">\n/* WRONG */\nfunction reverse(s: String): String;\n</code></pre>\n<p>Use os tipos number, string, and boolean.</p>\n<pre><code class=\"lang-typescript\">\n/* OK */\nfunction reverse(s: string): string;\n</code></pre>\n<p><strong>Dica*</strong>: Em vez de usar o tipo <code>Object</code> poderá utilizar o tipo <code>any</code>. Por vezes um tipo só é conhecido no runtime. Nestas situações, pode usar o tipo <code>any</code></p>\n<p>Não introduzir novos types/valores no global namespace.</p>\n<p>Types partilhados devem ser definidos em &#39;types.ts&#39;.</p>\n<p>Num ficheiro, definições de type devem aparecer primeiro.</p>\n"
+              }
+            ]
+          },
+          {
+            "title": "3. <code>Null</code> não é nosso amigo ",
+            "heading": "h3",
+            "content": "\n<p>Utilizar <code>undefined</code> em vez de <code>null</code>  (<a href=\"https://medium.com/@basarat/null-vs-undefined-in-typescript-land-dc0c7a5f240a#.mcq4te64w\"><em><code>null</code> vs. <code>undefined</code> in TypeScript land by Basarat</em></a>)</p>\n",
+            "children": [
+              {
+                "title": "4. Ficheiros auto-gerados <code>&quot;.generated.*</code> ",
+                "heading": "h4",
+                "content": "\n<p>Apenas um ficheiro por componente lógico (e.g. parser, scanner, emitter, checker).</p>\n<p>Ficheiros com sufixo &quot;.generated.*&quot; são auto-gerados, não os edite manualmente.</p>\n"
+              }
+            ]
+          },
+          {
+            "title": "5. Imutabilidade (#imutabilidade)",
+            "heading": "h3",
+            "content": "\n<p>Considere objetos como Nodes, Símbolos, etc. são imutáveis fora do componente que os criou. Não os mude.\nConsidere arrays como imutáveis por padrão após a criação.</p>\n",
+            "children": [
+              {
+                "title": "6. Callback Types ",
+                "heading": "h4",
+                "content": "\n<p>Não usar o tipo <code>any</code> para callbacks cujo valor será ignorado</p>\n<pre><code class=\"lang-typescript\">/* WRONG */\nfunction fn(x: () =&gt; any) {\n    x();\n}\n</code></pre>\n<p>Em vez de <code>any</code>, usar o tipo <code>void</code>, pois é mais seguro,impede o uso acidental do valor de retorno de x, de uma maneira não controlada.</p>\n<pre><code class=\"lang-typescript\">/* OK */\nfunction fn(x: () =&gt; void) {\n    x();\n}\n</code></pre>\n<p>Exemplo do uso correcto de <code>void</code>:</p>\n<pre><code class=\"lang-typescript\">function fn(x: () =&gt; void) {\n    var k = x(); // oops! meant to do something else\n    k.doSomething(); // error, but would be OK if the return type had been &#39;any&#39;\n}\n</code></pre>\n"
+              },
+              {
+                "title": "7. Parâmetros Opcionais em Callbacks ",
+                "heading": "h4",
+                "content": "\n<p>Não usar parâmetros opcionais em callbacks, a não ser que sejam efetivamente opcionais. (<a href=\"styleguide.md#arrasto\">Ver abaixo</a>)</p>\n"
+              },
+              {
+                "title": "8. Overloads e Callbacks ",
+                "heading": "h4",
+                "content": "\n<p>Não escrever overloads separadas que diferem apenas no número de argumentos do callback. É preferivel escrever apenas um overload com o máximo número de argumentos.</p>\n<pre><code class=\"lang-typescript\">/* WRONG */\ndeclare function beforeAll(action: () =&gt; void, timeout?: number): void;\ndeclare function beforeAll(action: (done: DoneFn) =&gt; void, timeout?: number): void;\n</code></pre>\n<p>Um callback pode sempre desconsiderar um parâmetro, pelo que não há necessidade de ter um overload mais curto. Assim, evita-se que funções digitadas incorretamente sejam passadas por corresponderem ao primeiro overload.</p>\n<pre><code class=\"lang-typescript\">/* OK */\ndeclare function beforeAll(action: (done: DoneFn) =&gt; void, timeout?: number): void;\n</code></pre>\n"
+              },
+              {
+                "title": "9. Ordenação ",
+                "heading": "h4",
+                "content": "\n<p>É recomendado não colocar overloads gerais antes de overload especificos.\nNa resolução de funções, Typescript escolhe o primeiro overload correspondente (<em>first matching overload</em>). Quando o overload interpretado é mais geral, as seguintes são ocultadas, não sendo chamadas.</p>\n<pre><code class=\"lang-typescript\">/* WRONG */\ndeclare function fn(x: any): any;  //geral\ndeclare function fn(x: HTMLElement): number;  //específico\ndeclare function fn(x: HTMLDivElement): string; //específico\n\nvar myElem: HTMLDivElement;\nvar x = fn(myElem); // x: any, wat?\n</code></pre>\n<pre><code class=\"lang-typescript\">/* OK */\ndeclare function fn(x: HTMLDivElement): string; //específico\ndeclare function fn(x: HTMLElement): number; //específico\ndeclare function fn(x: any): any; //geral\n\nvar myElem: HTMLDivElement;\nvar x = fn(myElem); // x: string, :)\n</code></pre>\n"
+              },
+              {
+                "title": "10. Evitar arrasto de pârametros através de opcionais ",
+                "heading": "h4",
+                "content": "\n<p>Não escrever overloads que diferem apenas em parâmetros de arrasto.</p>\n<pre><code class=\"lang-typescript\">/* WRONG */\ninterface Example {\n    diff(one: string): number;\n    diff(one: string, two: string): number;\n    diff(one: string, two: string, three: boolean): number;\n}\n</code></pre>\n<p>Quanto têm o mesmo return type, é preferivel utilizar parâmetros opcionais:</p>\n<pre><code class=\"lang-typescript\">/* OK */\ninterface Example {\n    diff(one: string, two?: string, three?: boolean): number;\n}\n</code></pre>\n"
+              },
+              {
+                "title": "11. Union Types (ex: <code>number|string</code>) ",
+                "heading": "h4",
+                "content": "\n<p>Não escrever overloads que diferem apenas no tipo, em apenas uma posição de argumento.</p>\n<pre><code class=\"lang-typescript\">/* WRONG */\ninterface Moment {\n    utcOffset(): number;\n    utcOffset(b: number): Moment;\n    utcOffset(b: string): Moment;\n}\n</code></pre>\n<p>Em vez disso, utilizar union types, pois permite ter um valor com varias representações ou formatos na mesma posição de memória.</p>\n<pre><code class=\"lang-typescript\">/* OK */\ninterface Moment {\n    utcOffset(): number;\n    utcOffset(b: number|string): Moment;\n}\n</code></pre>\n<p>Tal nomemclatura é importante para quando se está a passar um valor à função:</p>\n<pre><code class=\"lang-typescript\">function fn(x: string): void;\nfunction fn(x: number): void;\nfunction fn(x: number|string) {\n    // When written with separate overloads, incorrectly an error\n    // When written with union types, correctly OK\n    return moment().utcOffset(x);\n</code></pre>\n"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Git ",
+        "heading": "h2",
+        "content": "\n<p>Como as ferramentas utilizadas estão em inglês, esta secção estará maioritariamente em inglês</p>\n<ol>\n<li><a href=\"#G1\">Submeter um issue / bug</a></li>\n<li><a href=\"#G2\">Submeter um Pull Request (PR)</a></li>\n<li><a href=\"#G3\">Commit Message Guidelines</a></li>\n</ol>\n",
+        "children": [
+          {
+            "title": "1. Submeter um issue / bug ",
+            "heading": "h3",
+            "content": "\n<p>Ao submeter um <em>issue</em> deverá indicar as seguintes informações:</p>\n<pre><code>* Descrição do erro\n* Caso de uso - o que estava a fazer quando ocorreu o erro\n* Versão da aplicação \n* Sistema Operativo\n* Screenshots (se aplicável)\n* Related Issues - se estiver relacionado com outros *issues* abertos\n* Sugerir uma correcção - se souber corrigir o *bug* \n</code></pre>"
+          },
+          {
+            "title": "2. Submeter um Pull Request (PR) ",
+            "heading": "h3",
+            "content": "\n<p>Antes de submeter um pull request, considere as seguintes <em>guidelines</em>:</p>\n<ul>\n<li><p>Make your changes in a new git branch:</p>\n<pre><code class=\"lang-shell\">   git checkout -b my-fix-branch master\n</code></pre>\n</li>\n<li><p>Create your patch, <strong>including appropriate test cases</strong>.</p>\n</li>\n<li>Follow our Coding Rules.</li>\n<li>Commit your changes using a descriptive commit message.<pre><code class=\"lang-shell\">   git commit -a\n</code></pre>\nNote: the optional commit <code>-a</code> command line option will automatically &quot;add&quot; and &quot;rm&quot; edited files.</li>\n</ul>\n"
+          },
+          {
+            "title": "3. Commit Message Guidelines ",
+            "heading": "h3",
+            "content": "\n<p>Temos regras muito precisas sobre como nossas mensagens de commit git podem ser formatadas. \nIsso leva a <strong> mensagens mais Legíveis </strong> que são fáceis de seguir ao olhar através da <strong> história do projeto </strong>. Mas também,\nNós usamos as mensagens git commit para <em> <em>*gerar change logs</em></em></p>\n",
+            "children": [
+              {
+                "title": "Commit Message Formato",
+                "heading": "h4",
+                "content": "\n<p>Cada commit message tem os seguintes elementos: <strong>header</strong>, <strong>body</strong> e <strong>footer</strong>.<br>Por sua vez, um <strong>header</strong> é composto por <strong>type</strong>, <strong>scope</strong> e <strong>subject</strong>:</p>\n<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;\n&lt;BLANK LINE&gt;\n&lt;body&gt;\n&lt;BLANK LINE&gt;\n&lt;footer&gt;\n</code></pre><p>O <strong>header</strong> é obrigatório, mas a <strong>scope</strong> do header é opcional.</p>\n<p>Cada linhha da commit message não deve ter mais de <strong>100 caracteres</strong>. Assim a mensagem será mais facil de ler nas mais variadas git tools.</p>\n"
+              },
+              {
+                "title": "Revert",
+                "heading": "h4",
+                "content": "\n<p>Se um commit reverte um commit anterior, deve começar com <code>revert:</code>, seguido do <em>header</em> do commit revertido.\nO <em>body</em> deverá ter a mensagem <code>This reverts commit &lt;hash&gt;.</code>. O <em>hash</em> é o SHA do commit que será revertido.</p>\n"
+              },
+              {
+                "title": "Type",
+                "heading": "h4",
+                "content": "\n<p>Deve ser um dos seguintes:</p>\n<ul>\n<li><strong>feat</strong>: A new feature</li>\n<li><strong>fix</strong>: A bug fix</li>\n<li><strong>docs</strong>: Documentation only changes</li>\n<li><strong>style</strong>: Changes that do not affect the meaning of the code (white-space, formatting, missing\nsemi-colons, etc)</li>\n<li><strong>refactor</strong>: A code change that neither fixes a bug nor adds a feature</li>\n<li><strong>perf</strong>: A code change that improves performance</li>\n<li><strong>test</strong>: Adding missing tests or correcting existing tests</li>\n<li><strong>build</strong>: Changes that affect the build system, CI configuration or external dependencies(example scopes: webpack, tns, npm)</li>\n<li><strong>chore</strong>: Other changes that don&#39;t modify <code>src</code> or <code>test</code> files</li>\n</ul>\n"
+              },
+              {
+                "title": "Scope",
+                "heading": "h4",
+                "content": "\n<p>O <em>scope</em> pode ser qualquer sitio especifico do commit change. (ex: <code>pin-page</code>, <code>card</code>, etc. )</p>\n"
+              },
+              {
+                "title": "Subject",
+                "heading": "h4",
+                "content": "\n<p>O <em>subject</em> é uma descrição suscinta da alteração.</p>\n<ul>\n<li>Uso do imperativo: &quot;change&quot; em vez de &quot;changed&quot; ou &quot;changes&quot;</li>\n<li>Sem letra maiuscula no inicio</li>\n<li>Sem pontos finais (.) no fim</li>\n</ul>\n"
+              },
+              {
+                "title": "Body",
+                "heading": "h4",
+                "content": "\n<ul>\n<li>Uso do imperativo (tal como em <em>subject</em>)</li>\n<li>Deve incluir a motivação da mudança e as alterações em relação à versão anterior\nJust as in the <strong>subject</strong>, use the imperative, present tense: &quot;change&quot; not &quot;changed&quot; nor &quot;changes&quot;.</li>\n</ul>\n"
+              },
+              {
+                "title": "Footer",
+                "heading": "h4",
+                "content": "\n<p>Deverá conter informação sobre <strong>Breaking Changes</strong> e também a referência para o <em>issue</em> que o commit fecha.</p>\n<p><strong>Breaking Changes</strong> devem começar com a expressão <code>BREAKING CHANGE:</code> com duas linhas de separação do <em>body</em>-</p>\n"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "path": "styleguide.md"
+  },
+  {
+    "title": "Backend",
+    "heading": "h1",
+    "content": "\n",
+    "children": [
+      {
+        "title": "Web and services application framework: <a href=\"https://hapijs.com/\">Hapi.Js</a> + Typescript",
+        "heading": "h2",
+        "content": "\n<pre><code>* [github - seed-hapi](https://github.com/dwyl/hapi-typescript-example)\n</code></pre>"
+      },
+      {
+        "title": "Azure Key Vault:",
+        "heading": "h2",
+        "content": "\n<p>O cofre de chave do Azure ajuda a salvaguardar as chaves criptográficas e os segredos utilizados pelas aplicações em nuvem e pelos serviços. </p>\n<pre><code>* [mais informações](https://docs.microsoft.com/pt-pt/azure/key-vault/key-vault-whatis)\n* [npm](https://www.npmjs.com/package/azure-keyvault)\n* [API docs](http://azure.github.io/azure-sdk-for-node/azure-keyvault/latest/)\n</code></pre>"
+      },
+      {
+        "title": "(RSA) jsrsasign",
+        "heading": "h2",
+        "content": "\n<p>&#39;jsrsasign&#39; (RSA-Sign JavaScript Library) é uma biblioteca criptográfica opensouce que suporta RSA/RSAPSS/ECDSA/DSA signing/validation, ASN.1, PKCS#1/5/8 private/public key, X.509 certificate, CRL, CMS SignedData, TimeStamp &amp; CAdES e JSON Web Signature(JWS)/Token(JWT)/Key(JWK)</p>\n<pre><code>* [site](http://kjur.github.io/jsrsasign/)\n* [npm](https://www.npmjs.com/package/jsrsasign)\n* [API docs](https://kjur.github.io/jsrsasign/api/index.html)\n\n* certificados CA:\n      * [JS Certification Authority](https://kjur.github.io/jsrsasign/tool_ca.html)\n</code></pre>"
+      },
+      {
+        "title": "Crypt AES - Crypto-js",
+        "heading": "h2",
+        "content": "\n<p>Crypto-js é uma biblioteca JavaScript de padrões de criptografia.</p>\n<pre><code>* [github](https://github.com/brix/crypto-js)\n* [npm](https://www.npmjs.com/package/crypto-js)\n</code></pre>"
+      },
+      {
+        "title": "Validação de JSON",
+        "heading": "h2",
+        "content": "\n<pre><code>* [site](http://json-schema.org)\n* [npm](https://www.npmjs.com/package/jsonschema)\n* [conversão de tipos typescript e JSON Schema - github](https://github.com/YousefED/typescript-json-schema)\n</code></pre>"
+      },
+      {
+        "title": "TOTP",
+        "heading": "h2",
+        "content": "\n<p>Para a gestão de passwords, utilizou-se o One-Time Password manager. Compativel com  HOTP (counter based one time passwords) e TOTP (time based one time passwords). Suporta autenticação de dois fatores.</p>\n<pre><code>* [npm](https://www.npmjs.com/package/otp.js)\n</code></pre>"
+      },
+      {
+        "title": "JSON Web Key (JWK) - para Storage",
+        "heading": "h2",
+        "content": "\n<pre><code>* [Docs](https://tools.ietf.org/html/rfc7515)\n</code></pre>"
+      },
+      {
+        "title": "JSON Web Signature (JWS) - Payload JWE",
+        "heading": "h2",
+        "content": "\n<pre><code>* [Docs](https://tools.ietf.org/html/rfc7515)\n</code></pre>"
+      },
+      {
+        "title": "JSON Web Encryption (JWE) - Payload MessageAction(CeS)",
+        "heading": "h2",
+        "content": "\n<pre><code>* [Docs](https://tools.ietf.org/html/rfc7516)\n</code></pre>"
+      }
+    ],
+    "path": "backend.md"
+  },
+  {
+    "title": "Funcionamento",
+    "heading": "h1",
+    "content": "\n",
+    "children": [
+      {
+        "title": "Recolha de Dados ",
+        "heading": "h2",
+        "content": "\n<p>Para ativação da MySNS Carteira o cidadão regista na aplicação o Número de SNS + Data de Nascimento + Número de Telemóvel.</p>\n<p>A informação do cidadão, quer relativa a dados pessoais, quer a dados de saúde, disponibilizada através de cartões, está residente nas bases de dados locais e centrais notificadas junto da CNPD em processos próprios.</p>\n<p>Toda a restante informação fica guardada <strong>localmente</strong> de forma encriptada, no dispositivo móvel do Cidadão.</p>\n"
+      },
+      {
+        "title": "Comunicação e Interconexões de Dados",
+        "heading": "h2",
+        "content": "\n<p>A MySNS Carteira poderá receber informação das várias bases de dados de informação de saúde, devidamente notificadas junto da CNPD - Comissão Nacional de Protecção de Dados em processos próprios.</p>\n<p>A comunicação feita entre o dispositivo móvel e o servidor MySNS Carteira é feita usando o protocolo <strong>HTTPS</strong>.</p>\n<p>A comunicação feita entre a base de dados dos vários sistemas de informação (centrais e locais) e o Servidor MySNS Carteira é feita usando o protocolo HTTPS e toda a informação trocada é ainda encriptada e assinada digitalmente usando os algoritmos de encriptação <strong><a href=\"https://www.emc.com/emc-plus/rsa-labs/standards-initiatives/pkcs-rsa-cryptography-standard.htm\">RSA (2048 bit)</a></strong> e <strong><a href=\"http://aesencryption.net/\">AES (256 bit)</a></strong>. </p>\n<p>Para a encriptação usando o algoritmo RSA, o par de chaves de encriptação é do tipo HSM (hardware security module - FIPS 140-2 Level 2), cujos requisitos de segurança e necessidades de escalabilidade de produto, levaram a uma opção de cloud <a href=\"https://azure.microsoft.com/en-us/services/key-vault\">Azure Key Vault</a>.</p>\n<p>O Servidor MySNS Carteira não guarda qualquer tipo de informação relativa aos cartões do cidadão, guarda apenas  informação de registo (logs encriptados) para diagnóstico de problemas de funcionamento da aplicação, com tempo de conservação máximo de 1 mês e está alojado na cloud.</p>\n<p>A informação será guardada localmente no dispositivo móvel do Cidadão (encriptada) cabendo a este, de forma discricionária, apagá-la quando achar conveniente.\nRelativamente ao servidor MySNS Carteira, conforme já referido no ponto de comunicação e interconexões de dados, é apenas guardada meta informação (enquanto o cidadão tiver a MySNS Carteira ativa) e logs encriptados para deteção de problemas, no <strong>prazo máximo de um mês</strong>.</p>\n<p>O direito de acesso aos dados recolhidos no âmbito da aplicação MySNS Carteira é efetuado na <a href=\"https://spms.min-saude.pt\">SPMS – Serviços Partilhados do Ministério do Saúde, E.P.E.</a>\nO acesso aos dados dos cartões disponibilizados através da MySNS Carteira continua a ser exercido junto da instituição de saúde onde o titular dos dados está inscrito, ou no caso de dados da saúde, por intermédio de médico escolhido pelo titular dos dados.</p>\n"
+      }
+    ],
+    "path": "funcionamento.md"
+  },
+  {
+    "path": "seguranca.md"
+  },
+  {
+    "title": "Arquitetura da Aplicação",
+    "heading": "h1",
+    "content": "\n<p><img src=\"images/geral.png\" alt=\"Arquitetura CeS\"></p>\n<p>A aplicação CeS é desenvolvida em Angular 2, pelo que apresenta a arquitectura demonstrada no  diagrama anterior. \nDe o modo geral, é constituida por 2 componentes gerais: <strong>Módulos</strong> e <strong>Componentes</strong>. </p>\n<p><img src=\"images/arqCeS1.png\" alt=\"Arquitetura CeS\"></p>\n<h3>Módulos</h3>\n<p>Entre os módulos, cada um destes tem a sua responsabilidade, facilitando assim uma manutenção mais simples.</p>\n<p><strong>AppModule</strong> -  Cada aplicativo tem pelo menos um módulo Angular, o módulo raiz (<em>root</em>) que inicia o aplicativo. Cartões de Introdução e Error (páginas de erro), </p>\n<p><strong>PinModule</strong> - modulo para registo do PIN da Carteira, autenticação e mudança de PIN, com ligação ao serviço encriptado de Autenticação. O PIN fica guardado apenas no armazenamento do dispositivo móvel (Storage Service).</p>\n<p><strong>LoginModule</strong> - componente de autenticação na aplicação. Mediante o serviço de autenticação escolhido (Chave Móvel Digital ou Registo Nacional de Utente )</p>\n<p><strong>CardsModule</strong> - Coteúdo dos cartões (view de Cartões da CeS em detalhe)  </p>\n<p><strong>HomeModule</strong> - view de Cartões da CeS (vista fechada), Menus ( Settings e About), CardsList, adicionar, visualizar e remover cartões.</p>\n<p><strong>ComponentsModule</strong> - componentes de interface (navigation drawer, scroll, etc)</p>\n<h3>Serviços</h3>\n<p><strong>AuthenticationService</strong> - Autenticação e ligação aos servidores  (Backend) de forma segura e encriptada.</p>\n<p><strong>BackendService</strong> - ligação às base de dados dos vários sistemas de informação (centrais e locais) e o Servidor CeS (Azure Container Service -Docker Swarm) é feita usando o protocolo HTTPS (ver diagrama 1)</p>\n<p>Toda a informação trocada é ainda encriptada e assinada digitalmente usando os algoritmos de encriptação RSA (2048 bit) e AES (256 bit). O formato de dados utilizado é <a href=\"https://datatracker.ietf.org/wg/jose/documents/\">JSON\nObject Signing and Encryption (JOSE)</a>. O par de chaves RSA do servidor está alojado no Azure Key Vault, sendo as operações de assinatura e desencriptação efetuadas lá.</p>\n<p><strong>Storage Service</strong> - Serviço de armazenamento de dados no dispositivo móvel, devidamente encriptado. Através deste serviço, é armazenado o PIN, Home View e os cartões. </p>\n<p><strong>CeS Backend Services</strong> - conjunto de serviços de apoio ao funcionamento da CeS (autenticação, comunicação, telemetria.)</p>\n<h3>Comunicação</h3>\n<p><img src=\"images/arqCeS2.png\" alt=\"Arquitetura CeS Comunicação\"></p>\n",
+    "path": "arquitetura.md"
+  },
+  {
+    "title": "Instalação e Setup ",
+    "heading": "h1",
+    "content": "\n<p>Esta aplicação utiliza <a href=\"http://docs.nativescript.org/angular/tutorial/ng-chapter-0\">NativeScript com TypeScript + Angular</a>.</p>\n",
+    "children": [
+      {
+        "title": "Pré-requisitos",
+        "heading": "h2",
+        "content": "\n<p>Este guia pressupõe que o utilizar tenha algum conhecimento de JavaScript, CSS e o terminal de sua máquina de desenvolvimento. \nRecomenda-se a realização do seguinte tutorial <a href=\"http://docs.nativescript.org/angular/tutorial/ng-chapter-0\">NativeScript: Get started with TypeScript and Angular 2</a></p>\n<p><em>Editor de texto recomendado</em> - Visual Studio Code, pois possui suporte de TypeScript incorporado</p>\n<h4>Step 1: Instalar Node.js</h4>\n<p>A CLI do NativeScript é baseada em Node.js e, como tal é necessário ter o Node.js instalado para usar o NativeScript.</p>\n<p><strong>para o  MacOS</strong>, com o <a href=\"https://brew.sh/\">Homebrew</a> \nPara instalar os ultimos updates do Homebrew</p>\n<pre><code class=\"lang-shell\">brew update\n</code></pre>\n<p>Para instalar o Node.js</p>\n<pre><code class=\"lang-shell\">brew install node@6\n</code></pre>\n<p><strong>para Windows</strong></p>\n<p><a href=\"https://nodejs.org/en/download/\">https://nodejs.org/en/download/</a></p>\n<h4>Step 2: Instalar NativeScript CLI</h4>\n<pre><code class=\"lang-shell\">npm install -g nativescript\n</code></pre>\n<p>Poderá verificar que a instalação foi concluida com sucesso ao correr o comando <code>tns</code></p>\n<pre><code class=\"lang-shell\">$ tns\n# NativeScript\n┌─────────┬─────────────────────────────────────────────────────────────────────┐\n│ Usage   │ Synopsis                                                            │\n│ General │ $ tns &lt;Command&gt; [Command Parameters] [--command &lt;Options&gt;]          │\n│ Alias   │ $ nativescript &lt;Command&gt; [Command Parameters] [--command &lt;Options&gt;] │\n</code></pre>\n<h4>Step 3: Clonar o repositório do VSTS</h4>\n<p>Depois de lhe serem garantidas as permissões necessarias para aceder ao repositório, deverá executar o seguinte comando:</p>\n<pre><code class=\"lang-shell\">git clone https://nma-spms.visualstudio.com/CeS/_git/CeS-App\n</code></pre>\n<p>Será solicitado que coloque o seu Username (xxx@spms.min-sade.pt) e respetiva palavra-passe.</p>\n<h4>Step 4: Correr applicação</h4>\n<p>Este comando instala as dependencias listadas no npm caso ainda nao estejam instaladas</p>\n<pre><code class=\"lang-shell\">tns run android ou tns run ios\n</code></pre>\n"
+      }
+    ],
+    "path": "install&setup.md"
+  },
+  {
+    "title": "FAQ - Suporte",
+    "heading": "h1",
+    "content": "\n<p>Esta página contempla uma lista de respostas a serem dadas a questões comuns, colocadas pelos utilizadores.\nVersão suportada: <code>**1.x**</code></p>\n<ol>\n<li><a href=\"#P1\">Problemas no Registo</a><ul>\n<li>1.1 <a href=\"#P11\">Acesso com RNU - Dados do utente inválidos (desatualizados)</a></li>\n</ul>\n</li>\n<li><a href=\"#P2\">Problemas na autenticação</a><ul>\n<li>2.1 <a href=\"#P21\">Código SMS não recebido</a></li>\n<li>2.2 <a href=\"#P22\">Código PIN inválido/esquecido</a></li>\n</ul>\n</li>\n<li><a href=\"#P3\">Dificuldades técnicas na utilização</a><ul>\n<li>3.1 <a href=\"#P31\">Erro ao adicionar cartão/ A Aplicação não abre / fecha abruptamente etc</a></li>\n</ul>\n</li>\n<li><a href=\"#P4\">Reclamações, Elogios e Sugestões</a></li>\n<li><a href=\"#P5\">Problemas de instalação da aplicação</a><ul>\n<li>5.1 <a href=\"#P51\">Dificuldades técnicas não relacionadas com a aplicação</a></li>\n<li>5.2 <a href=\"#P52\">Sistema Operativo (SO) não suportado (Windows Phone)</a></li>\n<li>5.3 <a href=\"#P53\">Versão de SO não suportada (&lt; iOS 8 / &lt; Android 4.2 )</a></li>\n</ul>\n</li>\n<li><a href=\"#P6\">Problema a ser resolvido</a></li>\n</ol>\n<h3 id=\"P1\">1. Problemas no Registo </h3>\n<h4 id=\"P11\">1.1 Acesso com RNU - Dados do utente inválidos (desatualizados)  </h4>\n<blockquote>\n<p>Muito obrigado pela sua mensagem. É através das opiniões e sugestões dos cidadãos que conseguimos melhorar as nossas aplicações.</p>\n<p>De modo a poder atualizar os seus dados de utente, por favor dirija-se ao seu centro de saúde, solicite a atualização do seu número de telemóvel e verifique os restantes dados.</p>\n</blockquote>\n<h3 id=\"P2\">2. Problemas na autenticação </h3>\n<h4 id=\"P21\">2.1 Código SMS não recebido </h4>\n<blockquote>\n<p>Muito obrigado pela sua mensagem. É através das opiniões e sugestões dos cidadãos que conseguimos melhorar as nossas aplicações.</p>\n<p>Após o registo da aplicação MySNS Carteira - onde lhe são solicitados o seu número de Utente, data de nascimento e número de telemóvel associado ao seu Registo Nacional de Utente, deverá receber uma mensagem SMS no seu telemóvel (e não no e-mail).</p>\n<p>Se não recebeu a SMS com o código de verificação, tal pode ter ocorrido devido a falha da operadora. Por favor tente novamente.\nSe esta ou outra situação voltar a ocorrer, continuamos disponíveis para qualquer esclarecimento.</p>\n<p>Espero que continue a utilizar a MySNS Carteira e que as atualizações sejam do seu agrado.</p>\n</blockquote>\n<h4 id=\"P22\">2.2 Código PIN inválido/esquecido </h4>\n<blockquote>\n<p>Muito obrigado pela sua mensagem. É através das opiniões e sugestões dos cidadãos que conseguimos melhorar as nossas aplicações.\nO PIN da carteira trata-se de um código de segurança pessoal, escolhido pelo cidadão, pelo que, de modo a manter a total segurança dos dados, não há forma de o recuperar. Assim sendo, deverá voltar a instalar a MySNS Carteira, escolher um novo PIN e voltar a adicionar os cartões que quer ter sempre consigo.\nA MySNS Carteira está ainda em versão beta, ou seja, ainda se encontra em fase de desenvolvimento e testes. Foi disponibilizada para que os cidadãos possam testar e eventualmente, reportar erros na aplicação.\nEspero que continue a utilizar a MySNS Carteira e que as atualizações sejam do seu agrado.</p>\n</blockquote>\n<h3 id=\"P3\">3. Dificuldades técnicas na utilização </h3>\n<h4 id=\"P31\">3.1 Erro ao adicionar cartão/ A Aplicação não abre / fecha abruptamente etc </h4>\n<blockquote>\n<p>Obrigado pela sua mensagem.</p>\n<p>Esta trata-se ainda de uma versão beta, ou seja, ainda se encontra em fase de desenvolvimento e testes. Foi disponibilizada para que os cidadãos possam testar e eventualmente, reporta erros na aplicação.\nDurante as próximas semanas iremos lançar novas atualizações com várias correções e novos recursos. </p>\n<p>Pode-nos indicar qual o dispositivo móvel que utilizou (modelo e versão), de modo a que nos seja possível averiguar a situação?</p>\n</blockquote>\n<h3 id=\"P4\">4. Reclamações, Elogios e Sugestões </h3>\n<blockquote>\n<p>Muito obrigado pela sua mensagem. É através das opiniões e sugestões dos cidadãos que conseguimos melhorar as nossas aplicações.\nDurante as próximas semanas iremos lançar novas atualizações com várias correções e novos recursos.</p>\n<p>A MySNS Carteira está ainda em versão beta, ou seja, ainda se encontra em fase de desenvolvimento e testes. Foi disponibilizada para que os cidadãos possam testar e eventualmente, reportar erros na aplicação.</p>\n<p>Espero que continue a utilizar a MySNS Carteira e que as atualizações sejam do seu agrado.</p>\n</blockquote>\n<h3 id=\"P5\">5. Problemas de instalação da aplicação </h3>\n<h4 id=\"P51\">5.1 Dificuldades técnicas não relacionadas com a aplicação </h4>\n<p>Ex. como atualizar o dispositivo móvel</p>\n<blockquote>\n<p>Muito obrigado pela sua mensagem.</p>\n<p>Para esclarecimentos técnicos relacionados com o funcionamento do seu dispositivo entre em contacto com o fabricante do dispositivo ou a sua operadora.\nO Ministério da Saúde não possui esse tipo de informação.</p>\n<p>Com os melhores cumprimentos,</p>\n</blockquote>\n<h4 id=\"P52\">5.2 Sistema Operativo (SO) não suportado (Windows Phone) </h4>\n<blockquote>\n<p>Muito obrigado pela sua mensagem. É através das opiniões e sugestões dos cidadãos que conseguimos melhorar as nossas aplicações.</p>\n<p>De acordo com os Princípios gerais da Lei de bases da Saúde, o Ministério da Saúde (MS), promove o acesso de todos os cidadãos aos cuidados de saúde, bem como o acesso a todos os restantes serviços disponibilizados. \nSendo o acesso garantido nos limites dos recursos humanos, técnicos e financeiros disponíveis de acordo com o ponto 2 dos Princípios gerais, não foi ainda possível ao MS desenvolver todo o ecossistema de aplicações mobile para a plataforma Windows Mobile. </p>\n<p>A plataforma Windows com todas as suas versões representa 2,5% da quota de mercado de sistemas operativos para telemóvel, representando o Windows 10 uma percentagem inferior. Tendo o MS analisado o mercado e suas tendências percecionou que existe uma redução na utilização destas plataformas em detrimento das plataformas IOS e Android. A análise de mercado efetuada realça ainda a falta de aposta das marcas no lançamento de novos dispositivos e da Microsoft com um desinvestimento nas próprias plataformas. Estes dados podem ser consultados em <a href=\"http://www.theverge.com/2016/3/30/11333378/microsoft-windows-phone-windows-mobile-plans\">http://www.theverge.com/2016/3/30/11333378/microsoft-windows-phone-windows-mobile-plans</a></p>\n<p>Considerando os pontos anteriores, o MS realizou o impacto do esforço de desenvolvimento para estas plataformas (Windows Phone 7.5, Windows Phone 8, Windows Phone 8.1 e Windows 10 Mobile), tendo as ferramentas de desenvolvimento sofrido várias alterações que colocam em risco projetos de desenvolvimento. </p>\n<p>Do ponto de vista técnico, a tecnologia usada para desenvolvimento é a Angular NativeScript, ferramenta opensource que permite uma alta produtividade, uma boa performance, utiliza ferramentas de desenvolvimento com grandes comunidades e vai de encontro aos objetivos gerais da Administração Pública em matéria de aplicações informáticas (Decreto-Lei n.º 107/2012, de 18 de maio). Uma das razões da escolha desta ferramenta foi a transversalidade de plataformas que permite, no entanto, a Telerik, principal empresa que desenvolve esta ferramenta, ainda não disponibilizou suporte para as plataformas Windows phone, podendo acompanhar esta situação no endereço de internet: <a href=\"https://github.com/NativeScript/NativeScript/issues/254#issuecomment-272184207\">https://github.com/NativeScript/NativeScript/issues/254#issuecomment-272184207</a> </p>\n<p>Assim, de acordo com a alínea e) da Política de saúde apostada na Lei de bases da saúde, a gestão dos recursos disponíveis deve ser conduzida por forma a obter deles o maior proveito socialmente útil e a evitar o desperdício e a utilização indevida dos serviços, tendo o MS optado por chegar o mais rapidamente possível ao maior numero de cidadãos, não se encontrando previstos desenvolvimentos para as plataformas Windows Mobile de momento.</p>\n</blockquote>\n<h4 id=\"P53\">5.3 Versão de SO não suportada (&lt; iOS 8 / &lt; Android 4.2 ) </h4>\n<blockquote>\n<p>Muito obrigado pela sua mensagem. É através das opiniões e sugestões dos cidadãos que conseguimos melhorar as nossas aplicações.\nDe acordo com os Princípios gerais da Lei de bases da Saúde, o Ministério da Saúde (MS), promove o acesso de todos os cidadãos aos cuidados de saúde, bem como o acesso a todos os restantes serviços disponibilizados. \nSendo o acesso garantido nos limites dos recursos humanos, técnicos e financeiros disponíveis de acordo com o ponto 2 dos Princípios gerais, não foi ainda possível ao MS desenvolver todo o ecossistema de aplicações mobile para a versões anteriores à 4.2 para Android e, no caso do iOS , inferior à versão 8. \nTendo em conta os dados publicados no início de janeiro de 2017, no caso do sistema operativo Android, as versões anteriores à 4.2 representam apenas 13,7% da quota de mercado deste sistema operativo. Quanto ao sistema operativo iOS e ao número de utilizadores de versões inferiores ao iOS 8, tal valor é inferior a 6% tendo em conta todo o universo iPhone. \nTendo o MS analisado o mercado e suas tendências percecionou que existe uma redução na utilização destas. Estes dados podem ser consultados em <a href=\"https://developer.android.com/about/dashboards/index.html\">https://developer.android.com/about/dashboards/index.html</a> no caso do Android e em <a href=\"https://developer.apple.com/support/app-store/\">https://developer.apple.com/support/app-store/</a> para iOS.\nConsiderando os pontos anteriores, o MS realizou o impacto do esforço de desenvolvimento para estas versões dos sistemas operativos em causa, tendo as ferramentas de desenvolvimento sofrido várias alterações que colocam em risco projetos de desenvolvimento. </p>\n<p>Do ponto de vista técnico, a tecnologia usada para desenvolvimento é a Angular NativeScript, ferramenta opensource que permite uma alta produtividade, uma boa performance, utiliza ferramentas de desenvolvimento com grandes comunidades e vai de encontro aos objetivos gerais da Administração Pública em matéria de aplicações informáticas (Decreto-Lei n.º 107/2012, de 18 de maio). Uma das razões da escolha desta ferramenta foi a transversalidade de plataformas que permite, no entanto, a Telerik, principal empresa que desenvolve esta ferramenta, não disponibilizou suporte para dispositivos Android com versão inferior a 4.2 (API 17) nem para dispositivos iPhone com versão anterior à 8, podendo acompanhar esta situação no endereço de internet, em <a href=\"https://docs.nativescript.org/angular/runtimes/android/requirements.html#supported-api-levels\">https://docs.nativescript.org/angular/runtimes/android/requirements.html#supported-api-levels</a> e <a href=\"https://docs.nativescript.org/runtimes/ios/Requirements#supported-ios-versions\">https://docs.nativescript.org/runtimes/ios/Requirements#supported-ios-versions</a>, para Android e iOS respetivamente.</p>\n<p>Assim, de acordo com a alínea e) da Política de saúde apostada na Lei de bases da saúde, a gestão dos recursos disponíveis deve ser conduzida por forma a obter deles o maior proveito socialmente útil e a evitar o desperdício e a utilização indevida dos serviços, tendo o MS optado por chegar o mais rapidamente possível ao maior numero de cidadãos, não se encontrando previstos desenvolvimentos para as versões anteriores ao Android 4.2 e iOS 8.</p>\n</blockquote>\n<h3 id=\"P6\">6. Problema a ser resolvido </h3>\n<blockquote>\n<p>Boa tarde, Muito obrigado pela sua mensagem. É através das opiniões e sugestões dos cidadãos que conseguimos melhorar as nossas aplicações.</p>\n<p>Já estamos a trabalhar na solução. Deverá estar resolvido numa futura atualização, com a maior brevidade possível.</p>\n<p>A MySNS Carteira está ainda versão beta, ou seja, ainda se encontra em fase de desenvolvimento e testes. Foi disponibilizada para que os cidadãos possam testar e eventualmente, reportar erros na aplicação.</p>\n<p>Durante as próximas semanas iremos disponibilizar novas atualizações com várias correções e novos recursos.</p>\n<p>Com os melhores cumprimentos,</p>\n</blockquote>\n",
+    "path": "faq.md"
+  },
+  {
+    "title": "Introdução",
+    "heading": "h1",
+    "content": "\n<h3 id=\"sobre\">Sobre esta documentação </h3>\n<p>Este documento pretende ser um guia completo para a MySNS Carteira, doravante designada por CeS - Carteira Electrónica da Saúde. Contém toda a documentação para o funcionamento da perpectiva do utilizador bem como todos os recursos para o setup e desenvolvimento.</p>\n<h3 id=\"ces\">O que é a MySNS Carteira? </h3>\n<p>A MySNS Carteira, reúne a informação de saúde do cidadão numa aplicação residente no seu smartphone, construída de acordo com o interesse do cidadão, que escolhe concretamente a informação pretende guardar na MySNS Carteira. </p>\n<p>A MySNS Carteira é uma aplicação “vazia de conteúdo”, cabendo ao cidadão, de forma voluntária e ativa, escolher a informação que pretende nela incluir.<br>É uma plataforma de disponibilização de informação de saúde, associada ao cidadão através do seu número de Utente SNS e validada com a informação presente no Registo Nacional de Utente (RNU), onde o cidadão associa “cartões” específicos por componentes informativas do seu interesse.</p>\n<p>A MySNS Carteira é construída de forma a garantir os dois pilares essenciais da disponibilização de informação em formato eletrónico, de acordo com as boas práticas internacionais de segurança:</p>\n<ol>\n<li>Segurança (Security e Safety) – toda a informação é guardada de forma segura, usando standards internacionais, nomeadamente: AES, RSA;</li>\n<li>Identidade Digital do Cidadão (eID) – na ativação da aplicação é garantido que quem acede é quem diz que é.</li>\n</ol>\n<h3 id=\"ativar\">Como ativar </h3>\n<p><img align=\"right\" src=\"images/ativar.gif\" alt=\"Adicionar Cartões\" style=\"border:3px solid white\"></p>\n<p>Após descarregar a aplicação das lojas específicas para o dispositivo (<a href=\"https://play.google.com/store/apps/details?id=pt.minsaude.spms.ces\">Android</a> e <a href=\"https://itunes.apple.com/pt/app/mysns-carteira/id1192353854\">iOS</a>), o primeiro passo é a ativação da MySNS Carteira; esta ativação tem como objetivo associar o dispositivo móvel ao cidadão, para efeitos de identificação digital (eID). </p>\n<p>Este passo pode ocorrer de duas formas:</p>\n<ol>\n<li>Utilização de Chave Móvel Digital (CMD);</li>\n<li>Utilização do Número de SNS + Data de Nascimento + Número de Telemóvel.</li>\n</ol>\n<p>Relativamente ao uso da CMD, esta é efetuada em conformidade e nos termos da Lei n.º 37/2014, de 26 de junho, diploma que estabelece um sistema alternativo e voluntário de autenticação dos cidadãos nos portais e sítios na Internet da Administração Pública denominado Chave Móvel Digital.\nO segundo método implica o registo dos dados na aplicação pelo cidadão (preenchimento de número do SNS, data de nascimento e número de telemóvel). Esta informação é depois cruzada com a informação existente no RNU, sendo que:</p>\n<ul>\n<li><p>Caso os três dados sejam coincidentes, é enviado automaticamente um SMS para o número de telemóvel fornecido (e validado no RNU) com um código (TOTP) que deve ser introduzido na CeS para ativação. </p>\n</li>\n<li><p>Caso alguns dos dados não esteja correto, a aplicação devolve ao Cidadão uma mensagem informando que este se deve dirigir ao seu Centro de Saúde para, junto de um profissional, proceder à atualização da informação constante do RNU. Os dados inseridos inicialmente não são guardados, sendo necessário repetir toda a operação de ativação, desde o inicio.\nIndependentemente do método escolhido, a conclusão da ativação da MySNS Carteira é feita com a escolha de um pin pelo cidadão, para proteção (com recurso a encriptação) da informação constante da carteira, ou seja, o acesso à informação só é feito se o cidadão colocar o pin (mesmo com o dispositivo desbloqueado, não é possível aceder aos cartões sem a introdução do pin). Será também disponibilizada uma opção para alteração do pin.\nNo entanto, para melhorar a usabilidade da MySNS Carteira, o pin pode ser associado ao mecanismo de leitura de impressão digital, se disponível no dispositivo.</p>\n</li>\n</ul>\n<h3 id=\"addcartoes\">Como adicionar cartões </h3>\n<p><img align=\"left\" src=\"images/addcartoes.gif\" alt=\"Adicionar Cartões\" style=\"border:3px solid white\"></p>\n<p>O cidadão poderá associar “cartões” específicos por componentes informativas do seu interesse. Até ao momento, estão disponiveis os seguintes cartões:</p>\n<p>RNU – Cartão de Utente;</p>\n<p>ADSE – Cartão da ADSE;</p>\n<p>eGuias de Tratamento – guias de tratamento com códigos de dispensa relativos à Receita Sem Papel;</p>\n<p>Para adicionar cartões deverá utilizar o botão <img src=\"/images/mais.png\" alt=\"mais\">.</p>\n<p>Se a carteira estiver livre de cartões, poderá também utilizar o botão <img src=\"/images/addcartoes.png\" alt=\"adicionar cartões\">.</p>\n<p><br><br></p>\n<h3 id=\"terminar\">Como Terminar Sessão </h3>\n<p><img align=\"left\" src=\"images/termsessao.gif\" alt=\"Adicionar Cartões\"  style=\"border:3px solid white\">\nPara terminar sessão, basta ir ao menu esquerdo <img src=\"/images/menu.png\" alt=\"menu\"> e nas <strong>Definições</strong> irá encontrar a opção <strong>Terminar Sessão</strong></p>\n",
+    "path": "README.md"
+  }
+]

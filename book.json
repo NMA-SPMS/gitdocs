@@ -1,11 +1,5 @@
 {
-  "plugins": ["downloadpdf","exercises"],
-  "pluginsConfig": {
-    "downloadpdf": {
-      "base": "https://github.com/zhaoda/webpack-handbook/edit/master/content",
-      "label": "Download PDF",
-      "multilingual": false
-    }
-  }
+  "plugins": ["json","todo"]
 }
+
 

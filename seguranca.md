@@ -1,8 +1,3 @@
-#Estrutura
-
-![Diagrama](/images/diagrama.png)
-
-
 ## Segurança Fisica e Lógica {#seguranca}
 
 ### Medidas de segurança física
